@@ -22,19 +22,19 @@ const User = ({ user, deleteUser, changeShowModal, setisUserToUpdate }) => {
       <div className="mb-2">
         <h5 className="text-lg font-semibold">Cumpleaños</h5>
         <span>
-          <i className="bx bx-gift"></i> {user.birthday || 'No fecha'}
+          <i className="bx bx-gift"></i> {user.birthday || "No fecha"}
         </span>
       </div>
       <div className="flex justify-end">
         <button
           onClick={handleClikDelete}
-          className="text-red-500 hover:text-red-600"
+          className="btn-icon text-red-500 hover:text-red-600"
         >
           <i className="bx bxs-trash"></i>
         </button>
         <button
           onClick={handleClickUpdate}
-          className="text-blue-500 hover:text-blue-600 ml-2"
+          className="btn-icon text-blue-500 hover:text-blue-600 ml-2"
         >
           <i className="bx bx-pencil"></i>
         </button>

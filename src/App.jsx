@@ -18,7 +18,6 @@ function App() {
   const [isUserToUpdate, setisUserToUpdate] = useState(null);
   const [isShowModal, setisShowModal] = useState(false);
   const [users, setusers] = useState([]);
-  const [isDarkMode, setisDarkMode] = useState(false);
 
   const changeShowModal = () => setisShowModal(!isShowModal);
 
@@ -70,26 +69,21 @@ function App() {
     setisUserToUpdate(null);
   };
 
-  const toggleDarkMode = () => {
-    setisDarkMode(!isDarkMode);
-  };
-
   useEffect(() => {
     getAllUser();
   }, []);
 
   return (
-    <main className={`font-['Roboto'] ${isDarkMode ? 'dark' : ''}`}>
-      <Header changeShowModal={changeShowModal} toggleDarkMode={toggleDarkMode} isDarkMode={isDarkMode} />
+    <main className="font-['Roboto']">
+      <Header changeShowModal={changeShowModal} />
 
-      <div className={`container mx-auto mt-8 ${isDarkMode ? 'dark' : ''}`}>
+      <div className="container mx-auto mt-8">
         <ModalForm
           isShowModal={isShowModal}
           createUser={createUser}
           isUserToUpdate={isUserToUpdate}
           updateUser={updateUser}
           resetModalForm={resetModalForm}
-          isDarkMode={isDarkMode}
         />
 
         <UserList
@@ -97,7 +91,6 @@ function App() {
           deleteUser={deleteUser}
           changeShowModal={changeShowModal}
           setisUserToUpdate={setisUserToUpdate}
-          isDarkMode={isDarkMode}
         />
       </div>
     </main>
